@@ -1,4 +1,5 @@
 (ns teamwork.core
+  (:require [teamwork.trycatch :as trycatch] )
   (:gen-class))
 
 (defn -main
@@ -26,6 +27,12 @@
            Once all of us have checked in our code n github we can review each others work to learn .
 
            )
+
+  ;;;Code for main begins here
+  (let [x (first args)]
+    (cond
+      (= x "1") (trycatch/run_examples)
+      :else (println "this is default condition")))
 
 
   )
